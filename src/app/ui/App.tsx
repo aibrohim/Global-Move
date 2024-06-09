@@ -1,10 +1,15 @@
-import { Courses } from '@/widgets/Courses'
+import { Toaster } from '@/components/ui/toaster'
 import { QueryClient } from '../providers/QueryClient'
+import { AppRouter } from '../providers/Router'
+import { UserProvider } from '../providers/User'
 
 export const App = () => {
   return (
     <QueryClient>
-      <Courses />
+      <UserProvider>
+        <AppRouter />
+      </UserProvider>
+      <Toaster />
     </QueryClient>
   )
 }

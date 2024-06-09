@@ -4,6 +4,7 @@ import {
   TableOptions,
   useReactTable,
 } from '@tanstack/react-table'
+import { cn } from '@/lib/utils'
 
 interface TableProps<D> extends Partial<TableOptions<D>> {}
 
@@ -20,16 +21,22 @@ export const Table = <D extends unknown>({
   })
 
   return (
-    <div className="overflow-x-auto bg-white overflow-y-auto relative">
-      <table className="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
+    <div className="overflow-hidden relative rounded-md border border-solid border-gray-200">
+      <table className="border-collapse table-auto w-full whitespace-no-wrap table-striped relative">
         <thead>
           {getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
+              {headerGroup.headers.map((header, index, arr) => (
                 <th
                   key={header.id}
                   style={{ width: `${header.getSize()}px` }}
-                  className="bg-surface-light-subtle border-b border-base-200 px-3 py-[10px] text-left font-normal"
+                  className={cn(
+                    'bg-surface-light-subtle border-b border-solid border-gray-200 px-3 py-[10px] text-left font-normal',
+                    {
+                      'rounded-tl-md': !index,
+                      'rounded-tr-md': index === arr.length,
+                    }
+                  )}
                 >
                   {header.isPlaceholder
                     ? null
@@ -48,7 +55,7 @@ export const Table = <D extends unknown>({
               {row.getVisibleCells().map((cell) => (
                 <td
                   key={cell.id}
-                  className="px-3 py-2 border-b border-base-200"
+                  className="px-3 py-2 border-b border-solid border-gray-200"
                 >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
