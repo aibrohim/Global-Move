@@ -1,5 +1,5 @@
 import { Navigate, RouteObject } from 'react-router-dom'
-import { Courses } from '@/widgets/Courses'
+import { CoursesList } from '@/pages/CoursesList'
 import { AppLayout } from '../../../layouts/AppLayout'
 
 export const appRoutes: RouteObject[] = [
@@ -13,7 +13,7 @@ export const appRoutes: RouteObject[] = [
       },
       {
         path: '/courses',
-        element: <Courses />,
+        element: <CoursesList />,
       },
       {
         path: '*',
