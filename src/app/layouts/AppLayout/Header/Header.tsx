@@ -1,14 +1,18 @@
-import { PanelLeftClose } from 'lucide-react'
+import { PanelLeftClose, PanelRightClose } from 'lucide-react'
 import { FC } from 'react'
 import { Button } from '@/shared/ui/button'
 import { ProfileToggler } from './ProfileToggler'
 import { ThemeToggler } from './ThemeToggler'
 
 interface HeaderProps {
+  isExpanded: boolean
   onExpandTogglerClick: () => void
 }
 
-export const Header: FC<HeaderProps> = ({ onExpandTogglerClick }) => {
+export const Header: FC<HeaderProps> = ({
+  isExpanded,
+  onExpandTogglerClick,
+}) => {
   return (
     <header className="p-2 flex justify-between">
       <Button
@@ -16,7 +20,7 @@ export const Header: FC<HeaderProps> = ({ onExpandTogglerClick }) => {
         variant="outline"
         onClick={() => onExpandTogglerClick()}
       >
-        <PanelLeftClose />
+        {isExpanded ? <PanelLeftClose /> : <PanelRightClose />}
       </Button>
       <div className="flex gap-2">
         <ThemeToggler />
