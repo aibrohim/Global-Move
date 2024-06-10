@@ -12,6 +12,8 @@ import { Alert } from '@/components/ui/alert'
 import { useToast } from '@/components/ui/use-toast'
 import { useLogin } from '../api/loginApi'
 import { TFormState, validationSchema } from '../lib/validationSchema'
+import { PasswordInput } from '@/shared/ui/HookForm/PasswordInput'
+import { Input } from '@/shared/ui/HookForm/Input'
 
 export const Login: FC = () => {
   const { logIn } = useUser()
@@ -52,16 +54,12 @@ export const Login: FC = () => {
       )}
       <FormProvider {...form}>
         <form onSubmit={form.handleSubmit(handleFormSubmit)}>
-          <Field
-            name="email"
-            label="Email"
-            inputProps={{ placeholder: 'Email' }}
-          />
-          <Field
-            name="password"
-            label="Password"
-            inputProps={{ placeholder: 'Password' }}
-          />
+          <Field name="email" label="Email">
+            <Input name="email" placeholder="someone@uzchess.uz" />
+          </Field>
+          <Field name="password" label="Password">
+            <PasswordInput name="password" placeholder="SomeOne123" />
+          </Field>
           <SubmitButton type="submit" className="block w-full">
             Login
           </SubmitButton>

@@ -1,23 +1,17 @@
-import { FC, InputHTMLAttributes } from 'react'
+import { FC, ReactNode } from 'react'
 
 import { useController } from 'react-hook-form'
-import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
 
 interface InputProps {
   name: string
   label: string
   className?: string
-  inputProps?: InputHTMLAttributes<HTMLInputElement>
+  children: ReactNode
 }
 
-export const Field: FC<InputProps> = ({
-  name,
-  label,
-  className,
-  inputProps = {},
-}) => {
-  const { field, fieldState } = useController({
+export const Field: FC<InputProps> = ({ name, label, className, children }) => {
+  const { fieldState } = useController({
     name,
   })
 
@@ -31,7 +25,7 @@ export const Field: FC<InputProps> = ({
       )}
     >
       <span className="block font-semibold mb-2">{label}</span>
-      <Input {...inputProps} {...field} />
+      {children}
       {fieldState.error && (
         <p className="text-red-500 mt-4">{fieldState.error.message}</p>
       )}
