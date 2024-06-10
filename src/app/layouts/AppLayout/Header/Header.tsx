@@ -1,6 +1,6 @@
 import { PanelLeftClose } from 'lucide-react'
 import { FC } from 'react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/shared/ui/button'
 import { ProfileToggler } from './ProfileToggler'
 import { ThemeToggler } from './ThemeToggler'
 

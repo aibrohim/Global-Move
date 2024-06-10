@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/shared/ui/button'
 
 import { MenuItemProps as BaseMenuItemProps } from './types/MenuItemProps'
 

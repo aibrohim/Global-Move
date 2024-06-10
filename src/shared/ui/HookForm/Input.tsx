@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import { useController } from 'react-hook-form'
-import { Input as SharedInput } from '@/components/ui/input'
+import { Input as SharedInput } from '@/shared/ui/input'
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {

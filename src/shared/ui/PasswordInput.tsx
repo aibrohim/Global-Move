@@ -1,6 +1,6 @@
 import { FC, forwardRef, useState } from 'react'
 import { Eye, EyeOff } from 'lucide-react'
-import { Input } from '@/components/ui/input'
+import { Input } from '@/shared/ui/input'
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}

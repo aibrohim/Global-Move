@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { useFormContext } from 'react-hook-form'
-import { Button, ButtonProps } from '@/components/ui/button'
+import { Button, ButtonProps } from '@/shared/ui/button'
 
 interface SubmitButtonProps extends ButtonProps {}
 

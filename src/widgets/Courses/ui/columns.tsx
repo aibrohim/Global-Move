@@ -1,6 +1,6 @@
 import { ColumnDef } from '@tanstack/react-table'
 import { Edit, Eye, Play, Trash } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/shared/ui/button'
 import { ICourse } from '@/entities/Course'
 
 export const columns: ColumnDef<ICourse>[] = [

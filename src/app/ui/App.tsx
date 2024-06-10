@@ -1,4 +1,4 @@
-import { Toaster } from '@/components/ui/toaster'
+import { Toaster } from '@/shared/ui/toaster'
 import { QueryClient } from '../providers/QueryClient'
 import { AppRouter } from '../providers/Router'
 import { UserProvider } from '../providers/User'
