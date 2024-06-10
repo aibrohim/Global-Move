@@ -1,4 +1,4 @@
-import { RouteObject } from 'react-router-dom'
+import { Navigate, RouteObject } from 'react-router-dom'
 import { Courses } from '@/widgets/Courses'
 import { AppLayout } from '../../../layouts/AppLayout'
 
@@ -14,6 +14,10 @@ export const appRoutes: RouteObject[] = [
       {
         path: '/courses',
         element: <Courses />,
+      },
+      {
+        path: '*',
+        element: <Navigate to="/" />,
       },
     ],
   },

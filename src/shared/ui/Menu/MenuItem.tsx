@@ -7,7 +7,7 @@ import { MenuItemProps as BaseMenuItemProps } from './types/MenuItemProps'
 interface MenuItemProps extends BaseMenuItemProps {
   isActive: boolean
   isExpanded: boolean
-  onClick: (key: string) => void
+  onClick?: (key: string) => void
 }
 
 export const MenuItem: FC<MenuItemProps> = ({
@@ -20,7 +20,7 @@ export const MenuItem: FC<MenuItemProps> = ({
 }) => {
   return (
     <Button
-      onClick={() => onClick(itemKey)}
+      onClick={() => onClick?.(itemKey)}
       size="default"
       variant={isActive ? 'secondary' : 'ghost'}
       className="justify-start"
